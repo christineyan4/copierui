@@ -44,7 +44,7 @@ function draw() {
         if(j == 11){
           text("clr", i * 80 + 500, o);
         }
-        button[j].mouseClicked();
+
       }
     }
 
@@ -59,11 +59,12 @@ function draw() {
       text(pwd[k], k * 70 + 100, 100);
     }
     //mouseClicked();
+    button[j].mouseClicked();
 }
 
-//function mouseClicked() {
-//  edit_pwd(true, '_','*');
-//}
+function mouseClicked() {
+  edit_pwd(true, '_','*');
+}
 
 
 class Button {
@@ -109,6 +110,18 @@ class Button {
   }
 
 
+}
+
+function insert() {
+  if(j < 9 || (j == 10)){
+    edit_pwd(true);
+  }
+  if(j == 9){
+    edit_pwd(false);
+  }
+  if(j == 11){
+    clr();
+  }
 }
 
 
