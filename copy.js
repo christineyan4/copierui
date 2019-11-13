@@ -7,6 +7,14 @@ function setup() {
 
 }
 
+function goToMoreOptions() {
+    window.location = "more_options.html";
+    }
+
+function copy() {
+    alert("Copying ...");
+    }
+
 function draw() {
     fill(255);
     textSize(24);
@@ -29,6 +37,7 @@ function draw() {
     // MORE OPTIONS
     moreOptionsButton = createButton('MORE OPTIONS');
     moreOptionsButton.position(LEFTMOST, 300);
+    moreOptionsButton.mousePressed(goToMoreOptions);
 
     // NUMBER OF COPIES
     text("NUMBER OF COPIES", 500, 50);
@@ -41,6 +50,6 @@ function draw() {
 
     // COPY
     copyButton = createButton('COPY');
-    copyButton.position(400, 300)
-
+    copyButton.position(400, 300);
+    copyButton.mousePressed(copy);
 }
