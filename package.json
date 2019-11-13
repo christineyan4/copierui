@@ -1,0 +1,22 @@
+{
+  "name": "copierui",
+  "version": "1.0.0",
+  "description": "copier UI",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christineyan4/copierui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christineyan4/copierui/issues"
+  },
+  "homepage": "https://github.com/christineyan4/copierui#readme",
+  "dependencies": {
+    "p5": "^0.10.2"
+  }
+}
