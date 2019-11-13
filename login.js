@@ -1,6 +1,7 @@
 let button = [];
 let i,j,k;
 let pwd = ['_','_','_','_'];
+let pnt = 0;
 
 function setup() {
   createCanvas(1600, 1600);
@@ -29,6 +30,7 @@ function draw() {
 
         } //This is not the ideal function I want.
 
+
         button[j].show();
         if(j < 9){
           text(j+1, i * 80 + 500, o);
@@ -42,6 +44,7 @@ function draw() {
         if(j == 11){
           text("clr", i * 80 + 500, o);
         }
+        button[j].mouseClicked();
       }
     }
 
@@ -55,8 +58,13 @@ function draw() {
       fill(0);
       text(pwd[k], k * 70 + 100, 100);
     }
-
+    //mouseClicked();
 }
+
+//function mouseClicked() {
+//  edit_pwd(true, '_','*');
+//}
+
 
 class Button {
   constructor(x, y, h, num) {
@@ -85,46 +93,34 @@ class Button {
     }
   }
 
-  mouseReleased() {
+  mouseClicked(){
     //let d = dist(this.x, this.y, mouseX, mouseY);
-    /*
-    if (d < 30) {
-      //background(0);
-      if(j < 9||j==10){
-        edit_pwd(true, '_', '*');
+    //if (d < 30) {
+      if(j < 9 || (j == 10)){
+        edit_pwd(true);
       }
       if(j == 9){
-        edit_pwd(false, '*', '_');
+        edit_pwd(false);
       }
       if(j == 11){
         clr();
-
       }
+    //}
+  }
 
-    }
-  */
+
 }
 
 
 
-function edit_pwd(flag, target, replacement) {
+function edit_pwd(flag) {
   if(flag){
-    for(i = 0; i < 4; i++)
-    {
-      if(pwd[i] == target){
-        pwd[i] = replacement;
-        return;
-      }
-    }
+    pwd[pnt] = '*';
+    pnt ++;
   }
   else{
-    for(i = 3; i >= 0; i--)
-    {
-      if(pwd[i] == target){
-        pwd[i] = replacement;
-        return;
-      }
-    }
+    pwd[pnt] = '_';
+    pnt --;
   }
 }
 
