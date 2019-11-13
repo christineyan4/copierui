@@ -10,13 +10,8 @@ function setup() {
 }
 
 function draw() {
-  //textSize(100);
+
   fill(255);
-
-  button[0] = createButton("1");
-  button[0].size(100);
-
-  //textSize(10);
 
   for (i = 0; i < 3; i++) {
       for (var o = 80; o <= 320; o = o + 80) {
@@ -59,11 +54,15 @@ function draw() {
       text(pwd[k], k * 70 + 100, 100);
     }
     //mouseClicked();
-    button[j].mouseClicked();
+    //button[j].mouseClicked();
+    if(pwd[3] == '*')
+    {
+      //window.location.href = '/copy.html/';
+    }
 }
 
 function mouseClicked() {
-  edit_pwd(true, '_','*');
+  edit_pwd(true);
 }
 
 
@@ -94,7 +93,7 @@ class Button {
     }
   }
 
-  mouseClicked(){
+  /*mouseClicked(){
     //let d = dist(this.x, this.y, mouseX, mouseY);
     //if (d < 30) {
       if(j < 9 || (j == 10)){
@@ -108,20 +107,8 @@ class Button {
       }
     //}
   }
+  */
 
-
-}
-
-function insert() {
-  if(j < 9 || (j == 10)){
-    edit_pwd(true);
-  }
-  if(j == 9){
-    edit_pwd(false);
-  }
-  if(j == 11){
-    clr();
-  }
 }
 
 
