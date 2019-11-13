@@ -55,10 +55,10 @@ function draw() {
     }
     //mouseClicked();
     //button[j].mouseClicked();
-    if(pwd[3] == '*')
-    {
+    //if(pwd[3] == '*')
+    //{
       //window.location.href = '/copy.html/';
-    }
+    //}
 }
 
 function mouseClicked() {
