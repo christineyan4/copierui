@@ -56,21 +56,23 @@ function separatorPageToggle() {
     }
 
 function separatorPageSourceToggle() {
-    separatorPageSourceAColor = fillColor;
-    separatorPageSourceBColor = fillColor;
-    separatorPageSourceCColor = fillColor;
-    separatorPageSource = this.name;
-    switch (this.name) {
-        case 'A':
-            separatorPageSourceAColor = 100;
-            break;
-        case 'B':
-            separatorPageSourceBColor = 100;
-            break;
-        case 'C':
-            separatorPageSourceCColor = 100;
-            break;
-        }
+    if (separatorPageOn) {
+        separatorPageSourceAColor = fillColor;
+        separatorPageSourceBColor = fillColor;
+        separatorPageSourceCColor = fillColor;
+        separatorPageSource = this.name;
+        switch (this.name) {
+            case 'A':
+                separatorPageSourceAColor = 100;
+                break;
+            case 'B':
+                separatorPageSourceBColor = 100;
+                break;
+            case 'C':
+                separatorPageSourceCColor = 100;
+                break;
+            }
+    }
     }
 
 function cancel() {
