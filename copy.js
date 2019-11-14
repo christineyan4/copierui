@@ -4,14 +4,29 @@ BELOW_BUTTON = 20
 function setup() {
   createCanvas(1600, 1600);
   background(200);
-
+  numCopiesInput = createInput('1');
+  numCopiesInput.position(420, BELOW_BUTTON + 50);
 }
+
+function minus() {
+    v = numCopiesInput.value();
+    if (v > 1) {
+        v--;
+        }
+    numCopiesInput.value(v);
+    }
+
+function plus() {
+    v = numCopiesInput.value();
+    v++;
+    numCopiesInput.value(v);
+    }
 
 function goToMoreOptions() {
     window.location = "more_options.html";
     }
 
-function copy() {
+function copy1() {
     alert("Copying ...");
     }
 
@@ -42,14 +57,14 @@ function draw() {
     // NUMBER OF COPIES
     text("NUMBER OF COPIES", 500, 50);
     minusButton = createButton('-');
-    minusButton.position(400, BELOW_BUTTON + 50);
-    numCopiesInput = createInput();
-    numCopiesInput.position(430, BELOW_BUTTON + 50);
+    minusButton.position(numCopiesInput.x - minusButton.width, BELOW_BUTTON + 50);
     plusButton = createButton('+');
-    plusButton.position(580, BELOW_BUTTON + 50);
+    plusButton.position(numCopiesInput.x + numCopiesInput.width, BELOW_BUTTON + 50);
+    minusButton.mousePressed(minus);
+    plusButton.mousePressed(plus);
 
     // COPY
     copyButton = createButton('COPY');
     copyButton.position(400, 300);
-    copyButton.mousePressed(copy);
+    copyButton.mousePressed(copy1);
 }
